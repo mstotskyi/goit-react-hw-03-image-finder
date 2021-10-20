@@ -4,7 +4,7 @@
 
 Напиши приложение поиска изображений по ключевому слову. Превью рабочего
 приложения
-[https://drive.google.com/file/d/1oXCGyiq4uKwW0zzraZLKk4lh3voBlBzZ/view?usp=sharing].
+[смотри по ссылке](https://drive.google.com/file/d/1oXCGyiq4uKwW0zzraZLKk4lh3voBlBzZ/view?usp=sharing).
 
 Создай компоненты `<Searchbar>`, `<ImageGallery>`, `<ImageGalleryItem>`,
 `<Loader>`, `<Button>` и `<Modal>`. Готовые стили компонентов можно взять в

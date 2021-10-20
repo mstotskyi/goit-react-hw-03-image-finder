@@ -14,6 +14,7 @@ export class ImageGallery extends Component {
     status: 'init',
     showModal: false,
     modalImage: '',
+    showSpiner: false,
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -33,7 +34,7 @@ export class ImageGallery extends Component {
 
   handleOnClick = e => {
     newPicsApiService.incrementPage();
-    console.log(newPicsApiService.page);
+    this.togleSpiner();
     newPicsApiService
       .fetchPictures()
       .then(result => {
@@ -45,12 +46,13 @@ export class ImageGallery extends Component {
           top: document.documentElement.scrollHeight,
           behavior: 'smooth',
         });
+        this.togleSpiner();
       })
       .catch(error => {
         this.setState({ status: 'error' });
       });
   };
-
+  togleSpiner = () => this.setState({ showSpiner: !this.state.showSpiner });
   togleModal = () => this.setState({ showModal: !this.state.showModal });
 
   showModal = e => {
@@ -74,6 +76,7 @@ export class ImageGallery extends Component {
               showModal={this.showModal}
             />
           </ul>
+          {this.state.showSpiner && <Spiner />}
           <Button handleOnClick={this.handleOnClick} />
           {this.state.showModal && (
             <Modal togleModal={this.togleModal} img={this.state.modalImage} />
