@@ -8,7 +8,7 @@ export default class Spiner extends Component {
   render() {
     return (
       <Loader
-        type="Grid"
+        type="Watch"
         color="#00BFFF"
         height={100}
         width={100}
