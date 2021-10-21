@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Component } from 'react';
 import styles from 'components/Searchbar/Searchbar.module.css';
 
@@ -37,3 +39,7 @@ export class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = {
+  getSearchQuery: PropTypes.func.isRequired,
+};

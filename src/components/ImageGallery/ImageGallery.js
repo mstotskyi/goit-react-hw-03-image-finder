@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import styles from 'components/ImageGallery/ImageGallery.module.css';
 import PicsApiService from 'services/apiService';
@@ -89,3 +90,7 @@ export class ImageGallery extends Component {
     }
   }
 }
+
+ImageGallery.propTypes = {
+  searchQuery: PropTypes.string,
+};

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import styles from 'components/Button/Button.module.css';
 
 export function Button({ handleOnClick }) {
@@ -7,3 +9,7 @@ export function Button({ handleOnClick }) {
     </button>
   );
 }
+
+Button.propTypes = {
+  handleOnClick: PropTypes.func,
+};
