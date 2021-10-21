@@ -22,6 +22,7 @@ export class ImageGallery extends Component {
     if (prevProps.searchQuery !== this.props.searchQuery) {
       this.setState({ status: 'pending' });
       newPicsApiService.query = this.props.searchQuery;
+      newPicsApiService.resetPage();
       newPicsApiService
         .fetchPictures()
         .then(result =>

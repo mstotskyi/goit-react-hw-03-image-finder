@@ -6,6 +6,7 @@ import styles from 'components/Searchbar/Searchbar.module.css';
 export class Searchbar extends Component {
   state = {
     searchQery: '',
+    page: null,
   };
 
   handleOnSubmit = e => {
@@ -13,6 +14,7 @@ export class Searchbar extends Component {
 
     this.props.getSearchQuery(this.state.searchQery);
     this.setState({ searchQery: '' });
+    this.setState({ page: 1 });
   };
 
   handleOnChange = e => this.setState({ searchQery: e.target.value });
